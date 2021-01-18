@@ -5,6 +5,9 @@ include:
   - project: SocialGouv/gitlab-ci-yml
     file: /base_register_stage.yml
     ref: v17.19.0
+  - project: SocialGouv/gitlab-ci-yml
+    file: /base_kaniko_stage.yml
+    ref: v20.4.0
   #
   - /azure-cli/.gitlab-ci.yml
   - /azure-db/.gitlab-ci.yml
