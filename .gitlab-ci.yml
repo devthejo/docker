@@ -65,6 +65,9 @@ Release:
 
 #
 
+.base_register_kaniko_stage:
+  extends: .base_register_stage
+
 .base_register_to_harbor_stage:
   extends: .base_register_kaniko_stage
 
