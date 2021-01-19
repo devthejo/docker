@@ -30,7 +30,7 @@ Test azure-cli:
   needs:
     - Lint azure-cli
     - Build azure-cli
-  image: "${CI_REGISTRY_IMAGE}/azure-cli:${CI_COMMIT_SHA}"
+  image: "${HARBOR_REGISTRY}/${HARBOR_PROJECT}/azure-cli:${CI_COMMIT_SHA}"
   script:
     - az --version
 
