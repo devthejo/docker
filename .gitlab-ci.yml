@@ -82,6 +82,7 @@ stages:
       echo Build docker image and publish to ${HARBOR_REGISTRY}
       echo Context ${KANIKO_CONTEXT}
       echo Build args ${DOCKER_BUILD_ARGS}
+      echo Harbor registry ${HARBOR_REGISTRY}
       echo Publish to ${HARBOR_PROJECT}/${IMAGE_NAME}:${CI_COMMIT_SHA}
       echo Publish to ${HARBOR_PROJECT}/${IMAGE_NAME}:${TAG}
       echo "*******************************************************************"

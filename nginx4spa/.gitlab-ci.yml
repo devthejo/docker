@@ -22,7 +22,7 @@ Build nginx4spa:
     - .change_rules_nginx4pa
   variables:
     CONTEXT: nginx4spa
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
+    IMAGE_NAME: nginx4spa
 
 Test nginx4spa:
   stage: "Test"
