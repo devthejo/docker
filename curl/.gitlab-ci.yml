@@ -16,13 +16,13 @@ Lint curl:
 Build curl:
   stage: "Build"
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_curl
   needs:
     - Lint curl
   variables:
     CONTEXT: curl
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/curl
+    IMAGE_NAME: curl
 
 Test curl:
   needs:

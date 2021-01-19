@@ -18,11 +18,11 @@ Build azure-db:
   needs:
     - Lint azure-db
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_azure_db
   variables:
     CONTEXT: azure-db
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
+    IMAGE_NAME: azure-db
 
 Test azure-db 1 3:
   stage: "Test"

@@ -18,11 +18,11 @@ Build azure-cli:
   needs:
     - Lint azure-cli
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_azure_cli
   variables:
     CONTEXT: azure-cli
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-cli
+    IMAGE_NAME: azure-cli
 
 Test azure-cli:
   stage: "Test"

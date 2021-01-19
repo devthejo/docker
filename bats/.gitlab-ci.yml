@@ -18,11 +18,11 @@ Build bats:
   needs:
     - Lint bats
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_bats
   variables:
     CONTEXT: bats
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/bats
+    IMAGE_NAME: bats
 
 Test bats:
   stage: "Test"
@@ -33,7 +33,7 @@ Test bats:
   image: "${CI_REGISTRY_IMAGE}/bats:${CI_COMMIT_SHA}"
   script:
     - bats --version
-    - bats -p /opt/bats/test/fixtures/bats/passing.bats 
+    - bats -p /opt/bats/test/fixtures/bats/passing.bats
     - bats /opt/bats/test
     - bats /usr/lib/bats-assert/test
     # - bats /usr/lib/bats-file/test

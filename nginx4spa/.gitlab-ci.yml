@@ -18,7 +18,7 @@ Build nginx4spa:
   needs:
     - Lint nginx4spa
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_nginx4pa
   variables:
     CONTEXT: nginx4spa
