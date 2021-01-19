@@ -18,11 +18,11 @@ Build trivy:
   needs:
     - Lint trivy
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_trivy
   variables:
     CONTEXT: trivy
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/trivy
+    IMAGE_NAME: trivy
 
 Test trivy:
   stage: "Test"

@@ -25,11 +25,11 @@ Build k8s-ns-killer:
     - Lint k8s-ns-killer 2 2
   stage: "Build"
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_k8s_ns_killer
   variables:
     CONTEXT: k8s-ns-killer
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-ns-killer
+    IMAGE_NAME: k8s-ns-killer
 
 Test k8s-ns-killer:
   stage: "Test"

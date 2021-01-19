@@ -15,13 +15,13 @@ Lint wait-for-http:
 Build wait-for-http:
   stage: "Build"
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_wait_for_http
   needs:
     - Lint wait-for-http
   variables:
     CONTEXT: wait-for-http
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/wait-for-http
+    IMAGE_NAME: wait-for-http
 
 Test wait-for-http 1:
   needs:
@@ -34,18 +34,18 @@ Test wait-for-http 1:
     entrypoint: ["/bin/sh"]
   variables:
     WAIT_FOR_RETRIES: 1
-  
+
   # expect wait to fail and a retry duration >= 5secs (1*5)
   script: |
     start=`date +%s`
     (
-      /bin/wait-for-http http://invalid && echo "Should not fail" && exit 1 
+      /bin/wait-for-http http://invalid && echo "Should not fail" && exit 1
     ) || true
     end=`date +%s`
     runtime=$((end-start))
-    [[ $runtime -ge 5 ]] || ( 
-      echo "Should wait ~5 secs (actual $runtime)" && exit 1 
-    ) 
+    [[ $runtime -ge 5 ]] || (
+      echo "Should wait ~5 secs (actual $runtime)" && exit 1
+    )
 
 # test CLI param usage
 Test wait-for-http 2:

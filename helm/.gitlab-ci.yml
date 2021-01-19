@@ -18,7 +18,7 @@ Build helm:
   needs:
     - Lint helm
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_helm
   before_script:
     # NODE(douglasduteil): build from renovate maintaining package.json
@@ -34,7 +34,7 @@ Build helm:
     - DOCKER_BUILD_ARGS="--build-arg HELM_CHART_VERSION=${HELM_CHART_VERSION}"
   variables:
     CONTEXT: helm
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/helm
+    IMAGE_NAME: helm
 
 Test helm:
   stage: "Test"

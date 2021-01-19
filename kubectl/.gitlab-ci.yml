@@ -18,11 +18,11 @@ Build kubectl:
   needs:
     - Lint kubectl
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_kubectl
   variables:
     CONTEXT: kubectl
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kubectl
+    IMAGE_NAME: kubectl
 
 Test kubectl 1 2:
   stage: "Test"

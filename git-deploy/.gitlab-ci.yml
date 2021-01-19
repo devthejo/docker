@@ -18,11 +18,11 @@ Build git-deploy:
   needs:
     - Lint git-deploy
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_git_deploy
   variables:
     CONTEXT: git-deploy
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
+    IMAGE_NAME: git-deploy
 
 Test git-deploy:
   stage: "Test"

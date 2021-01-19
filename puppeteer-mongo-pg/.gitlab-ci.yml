@@ -17,11 +17,11 @@ Build puppeteer:
   needs:
     - Lint puppeteer
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_puppeteer
   variables:
     CONTEXT: puppeteer-mongo-pg
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer-mongo-pg
+    IMAGE_NAME: puppeteer-mongo-pg
 
 Test puppeteer:
   stage: "Test"

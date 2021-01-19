@@ -18,11 +18,11 @@ Build kosko:
   needs:
     - Lint kosko
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_kosko
   variables:
     CONTEXT: kosko
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kosko
+    IMAGE_NAME: kosko
 
 Test kosko:
   stage: "Test"

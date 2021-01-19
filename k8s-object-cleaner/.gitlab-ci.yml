@@ -26,11 +26,11 @@ Build k8s-object-cleaner:
     - Lint k8s-object-cleaner 2 2
   stage: "Build"
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_k8s_object_killer
   variables:
     CONTEXT: k8s-object-cleaner
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-object-cleaner
+    IMAGE_NAME: k8s-object-cleaner
 
 Test k8s-object-cleaner:
   stage: "Test"

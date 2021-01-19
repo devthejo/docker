@@ -18,11 +18,11 @@ Build pg-cleaner:
   needs:
     - Lint pg-cleaner
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_pg_cleaner
   variables:
     CONTEXT: pg-cleaner
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/pg-cleaner
+    IMAGE_NAME: pg-cleaner
 
 Test pg-cleaner:
   stage: "Test"

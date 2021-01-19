@@ -18,11 +18,11 @@ Build puppeteer:
   needs:
     - Lint puppeteer
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_puppeteer
   variables:
     CONTEXT: puppeteer
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer
+    IMAGE_NAME: puppeteer
 
 Test puppeteer:
   stage: "Test"

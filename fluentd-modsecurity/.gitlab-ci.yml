@@ -18,11 +18,11 @@ Build fluentd-modsecurity:
   needs:
     - Lint fluentd-modsecurity
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_fluentd_modsecurity
   variables:
     CONTEXT: fluentd-modsecurity
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/fluentd-modsecurity
+    IMAGE_NAME: fluentd-modsecurity
 
 Test fluentd-modsecurity:
   stage: "Test"

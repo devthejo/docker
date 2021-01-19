@@ -26,11 +26,11 @@ Build wait-for-postgres:
     - Lint wait-for-postgres 1 2
     - Lint wait-for-postgres 2 2
   extends:
-    - .base_register_to_gitlab_stage
+    - .base_register_to_harbor_stage
     - .change_rules_wait_for_postgres
   variables:
     CONTEXT: wait-for-postgres
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/wait-for-postgres
+    IMAGE_NAME: wait-for-postgres
 
 Test wait-for-postgres 1 2:
   stage: "Test"
