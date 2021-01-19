@@ -21,7 +21,7 @@ Build nginx4spa:
     - .base_register_to_gitlab_stage
     - .change_rules_nginx4pa
   variables:
-    CONTEXT: ${PWD}/nginx4spa
+    CONTEXT: nginx4spa
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
 
 Test nginx4spa:
