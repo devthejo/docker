@@ -8,7 +8,7 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN set -ex \
   #
   && wget -qO - \
-    "https://github.com/aquasecurity/trivy/releases/download/${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz" \
+    "https://github.com/aquasecurity/trivy/releases/download/${TRIVY_VERSION}/trivy_${TRIVY_VERSION:1}_Linux-64bit.tar.gz" \
     | tar -C "/dev/shm" -xzv \
   && mv /dev/shm/trivy /usr/local/bin/trivy \
   && mv /dev/shm/contrib /tmp/contrib \
