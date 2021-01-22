@@ -7,11 +7,6 @@ SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN set -ex \
   #
-  && apk add --update --no-cache \
-    ca-certificates=~20191127 \
-    git=~2 \
-    rpm=~4 \
-  #
   && wget -qO - \
     "https://github.com/aquasecurity/trivy/releases/download/${TRIVY_VERSION}/trivy_${TRIVY_VERSION#v}_Linux-64bit.tar.gz" \
     | tar -C "/dev/shm" -xzv \
